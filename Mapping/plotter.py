@@ -37,6 +37,8 @@ import sys
 
 import matplotlib
 matplotlib.use("Agg")
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 import matplotlib.pyplot as plt
 import networkx as nx
 
@@ -167,7 +169,7 @@ def plot_period(period, record, outdir):
 
     figure.tight_layout()
     path = os.path.join(
-        outdir, f"routing_volume_linvsgrid_comparison_period_{period}.pdf"
+        outdir, f"k{period}lineplot.pdf"
     )
     figure.savefig(path, bbox_inches="tight")
     plt.close(figure)
@@ -214,7 +216,7 @@ def plot_summary(results, outdir):
     axis.grid(True, axis="y", ls="--", alpha=0.45)
 
     figure.tight_layout()
-    path = os.path.join(outdir, "routing_volume_summary.pdf")
+    path = os.path.join(outdir, f"k{5}.pdf")
     figure.savefig(path, bbox_inches="tight")
     plt.close(figure)
     return path

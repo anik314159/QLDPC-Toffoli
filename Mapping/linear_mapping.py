@@ -1226,7 +1226,8 @@ def calculate_routing_volume(
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import NullLocator
- 
+plt.rcParams["pdf.fonttype"] = 42
+plt.rcParams["ps.fonttype"] = 42
 from figplots import plot_routing_volume
 
 
